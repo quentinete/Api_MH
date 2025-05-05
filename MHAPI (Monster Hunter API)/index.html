@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MHAPI - Explore the data</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <h1>MHAPI - Exploit api</h1>
+
+  <div class="Choix">
+    <label for="Select">Type :</label>
+    <select id="Select">
+      <option value="Monsters">Monstres</option>
+      <option value="Weapons">Armes</option>
+      <option value="Items">Objets</option>
+    </select>
+
+    <label for="NumWanted">Nombre :</label>
+    <input type="number" id="NumWanted" value="5" min="1" />
+
+    <button onclick="loadData()">Charger</button>
+  </div>
+
+  <div id="result">Fill in the fields and upload.</div>
+  <script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
