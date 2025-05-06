@@ -1,18 +1,25 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background: #f4f4f4;
-  }
-  
-  .Choix {
-    margin-bottom: 20px;
-  }
-  
-  #result {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-  }
+  background: #f4f4f4;
+}
 
-  
+.Choix {
+  margin-bottom: 20px;
+}
+
+#result {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.Data {
+  margin: 10px;
+  background: #f3f3ebf5;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.Datas {
+  margin: 3px;
+}
 
