@@ -55,10 +55,10 @@ function htmlDisplay(data, type) {
     } else if (type === "items") {
       html += `
         <h3 class="Datas">${item.name}</h3>
-        <p class="Datas"><strong>Type :</strong> ${item.type}</p>
         <p class="Datas"><strong>Description :</strong> ${item.description || "Aucune description"}</p>
         <p class="Datas"><strong>Rareté :</strong> ${item.rarity}</p>
         <p class="Datas"><strong>Utilisable en combat :</strong> ${item.combat ? "Oui" : "Non"}</p>
+        <p class="Datas"><strong>Max :</strong> ${item.carryLimit}</p>
       `;
     } else if (type === "ailments") {
       html += `
@@ -106,38 +106,41 @@ function htmlDisplay(data, type) {
     } else if (type === "decorations") {
       html += `
         <h3 class="Datas">${item.name}</h3>
-        <p class="Datas"><strong>Type :</strong> ${item.type}</p>
-        <p class="Datas"><strong>Effet :</strong> ${item.effect || "Aucun"}</p>
+        <p class="Datas"><strong>Rarity :</strong> ${item.rarity}</p>
+        <p class="Datas"><strong>Effet :</strong> ${item.skills[0].description || "Aucun"}</p>
       `;
     } else if (type === "events") {
       html += `
         <h3 class="Datas">${item.name}</h3>
-        <p class="Datas"><strong>Date :</strong> ${item.date}</p>
+        <p class="Datas"><strong>Date début:</strong> ${item.startTimestamp} <strong>Date fin:</strong>${item.endTimestamp}</p>
         <p class="Datas"><strong>Description :</strong> ${item.description || "Aucune"}</p>
+        <p class="Datas"><strong>requirements :</strong> ${item.requirements}</p>
+        <p class="Datas"><strong>successConditions :</strong> ${item.successConditions}</p>
+
+
       `;
     } else if (type === "charms") {
       html += `
         <h3 class="Datas">${item.name}</h3>
-        <p class="Datas"><strong>Effet :</strong> ${item.effect}</p>
-        <p class="Datas"><strong>Rareté :</strong> ${item.rarity}</p>
+        <p class="Datas"><strong>Effet :</strong> ${item.ranks[0].rarity} <strong>name : </strong>${item.ranks[0].name} <strong>skill : </strong>${item.ranks[0].skills[0].description}</p>
+        <p class="Datas"><strong>Effet :</strong> ${item.ranks[1].rarity} <strong>name : </strong>${item.ranks[1].name} <strong>skill : </strong>${item.ranks[1].skills[0].description}</p>
+        <p class="Datas"><strong>Effet :</strong> ${item.ranks[2].rarity} <strong>name : </strong>${item.ranks[2].name} <strong>skill : </strong>${item.ranks[2].skills[0].description}</p>
       `;
     } else if (type === "locations") {
       html += `
         <h3 class="Datas">${item.name}</h3>
-        <p class="Datas"><strong>Type :</strong> ${item.type}</p>
-        <p class="Datas"><strong>Description :</strong> ${item.description || "Aucune description"}</p>
+
       `;
     } else if (type === "motion-values") {
       html += `
         <h3 class="Datas">${item.name}</h3>
-        <p class="Datas"><strong>Type :</strong> ${item.type}</p>
-        <p class="Datas"><strong>Valeur :</strong> ${item.value || "Aucune valeur"}</p>
+        <p class="Datas"><strong>weaponType</strong> ${item.weaponType}</p>
       `;
     } else if (type === "skills") {
       html += `
         <h3 class="Datas">${item.name}</h3>
-        <p class="Datas"><strong>Effet :</strong> ${item.effect || "Aucun"}</p>
-        <p class="Datas"><strong>Rareté :</strong> ${item.rarity}</p>
+        <p class="Datas"><strong>description</strong> ${item.description || "Aucun"}</p>
+        <p class="Datas"><strong>skill : </strong>${item.ranks[0].description}</p>
       `;
     }
   
