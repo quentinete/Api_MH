@@ -12,14 +12,116 @@ body {
   border-radius: 8px;
 }
 
+body {
+  background-color: #f0f2f5;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
 .Data {
-  margin: 10px;
-  background: #f3f3ebf5;
-  padding: 15px;
+  background: #1e1e1e;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.2s ease;
+}
+
+.Data:hover {
+  transform: scale(1.01);
+}
+
+.Data h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #ffd54f;
+  border-bottom: 2px solid #444;
+  padding-bottom: 0.5rem;
+}
+
+.Data p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #cfcfcf;
+}
+
+.Data ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+
+.Data li {
+  border-top: 1px solid #333;
+  padding: 1rem 0;
+}
+
+.piece-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #81d4fa;
+}
+
+.piece-info {
+  margin-left: 1rem;
+  font-size: 0.95rem;
+  color: #b0bec5;
+}
+
+.piece-images {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.piece-images img {
+  height: 80px;
   border-radius: 8px;
+  border: 1px solid #555;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
 }
 
-.Datas {
-  margin: 3px;
+@media (max-width: 768px) {
+  .Data {
+    padding: 1rem;
+  }
+
+  .Data h3 {
+    font-size: 1.5rem;
+  }
+
+  .piece-images {
+    flex-direction: column;
+  }
+
+  .piece-images img {
+    height: 60px;
+  }
 }
 
+/* Armor/Set */
+
+.ArmorSets {
+  margin: 5px 0;
+}
+
+.armor-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.armor-piece {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.armor-image {
+  max-height: 80px;
+  display: block;
+  margin-top: 10px;
+}

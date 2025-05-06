@@ -74,22 +74,35 @@ function htmlDisplay(data, type) {
       `;
     } else if (type === "armor/sets") {
       html += `
-        <h3 class="Datas">${item.name}</h3>
-        <p class="Datas"><strong>Set :</strong> ${item.pieces}</p>
-        <p class="Datas"><strong>Set :</strong> ${item.pieces}</p>
-
+          <h3 class="ArmorSets">${item.name} (Rang : ${item.rank})</h3>
+          ${item.bonus ? `<p class="ArmorSets"><strong>Bonus de set :</strong> ${item.bonus}</p>` : ""}
+          <div class="ArmorSets">
+            <strong>Pièces d'armure :</strong>
+            <ul class="armor-list">
       `;
-
-      
-
-
-
-
-
-
-
-
-
+    
+      item.pieces.forEach(piece => {
+        const image = piece.assets?.imageMale || piece.assets?.imageFemale || "";
+        const resistances = piece.resistances;
+        const skills = piece.skills?.map(s => `${s.skillName} (niv. ${s.level})`).join(", ") || "Aucune";
+    
+        html += `
+          <li class="ArmorSets armor-piece">
+            <p><strong>Nom :</strong> ${piece.name}</p>
+            <p><strong>Type :</strong> ${piece.type}</p>
+            <p><strong>Défense :</strong> Base ${piece.defense.base}, Max ${piece.defense.max}, Augmentée ${piece.defense.augmented}</p>
+            <p><strong>Résistances :</strong> Feu ${resistances.fire}, Eau ${resistances.water}, Glace ${resistances.ice}, Foudre ${resistances.thunder}, Dragon ${resistances.dragon}</p>
+            <p><strong>Compétences :</strong> ${skills}</p>
+            ${image ? `<img src="${image}" alt="${piece.name}" class="armor-image">` : ""}
+          </li>
+        `;
+      });
+    
+      html += `
+            </ul>
+          </div>
+        </div>
+      `;
     } else if (type === "decorations") {
       html += `
         <h3 class="Datas">${item.name}</h3>
